@@ -34,3 +34,6 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
   for i in range(10):
     print(c*10)
   ```
+- Don't rely entirely on Py To CPP.
+  
+  #### It's important to have some C++ skills, even when using this automated converter. It will help you debug potential issues and/or optimization opportunities for   very large script conversions.
