@@ -15,7 +15,7 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
 | Format Conversions | ❌  |
 
 ### Keep these things in mind:
-- Don't use extra brackets in your output/print statement.
+- Don't use unnecessary brackets in your output/print statement.
 
   #### DO NOT code like this (❌):
   ```
