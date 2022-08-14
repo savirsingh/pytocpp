@@ -11,3 +11,5 @@ It doesn't work perfectly yet:
 | While Loops | ❌  |
 | Print Statements | ✅  |
 | Input(int/str) | ✅  |
+| Variable Assignments(int, str) | ✅  |
+| Format Conversions | ❌  |
