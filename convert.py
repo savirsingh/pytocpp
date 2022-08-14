@@ -2,6 +2,8 @@
 # Name: PY TO CPP convert.py
 # github.com/savirsingh/pytocpp
 
+extraatend = False
+
 while True:
     in1 = input(".py file which you would like to convert: ")
     if ".py" in in1:
@@ -33,9 +35,9 @@ try:
                         pass
         if "print(" in lines[i]:
             if in2 == "":
-                lines[i] = lines[i].replace("print(", "cout << ").replace(")", " << endl;")
+                lines[i] = lines[i].replace("print(", "cout << ").replace(")", " << endl;").replace("+", " << ")
             else:
-                lines[i] = lines[i].replace("print(", "cout << ").replace(")", " << " + '"' + in2 + '"' + ";")
+                lines[i] = lines[i].replace("print(", "cout << ").replace(")", " << " + '"' + in2 + '"' + ";").replace("+", " << ")
         if "input()" in lines[i] and "int(input())" not in lines[i]:
             line1 = lines[i].split("=")
             lines[i] = lines[i].replace(lines[i], "string " + line1[0] + ";" + "\n" + "cin >> " + line1[0] + ";")
@@ -45,8 +47,9 @@ try:
         if "for" in lines[i] and "range" in lines[i]:
             line1 = ''.join(lines[i].split("for")[1]).replace("in", "").replace(" ", "").replace("(", "").replace(")", "").replace(":", "").replace("\n", "").split("range")
             lines[i] = "for (int " + line1[0] + "=0; " + line1[0] + "<" + line1[1] + "; " + line1[0] + "++) {"
+            extraatend = True
             if "for" in lines[i]:
-                for b in range(len(lines)):
+                for b in range(i, len(lines)+1):
                     try:
                         if "    " in str(lines[b-1]) and "    " not in str(lines[b]):
                             lines[b] = "}\n" + lines[b]
@@ -60,7 +63,7 @@ try:
                 lines[i] = "vector<string> " + line0[0] + "={" + line2[1] + "}"
             else:
                 lines[i] = "vector<int> " + line0[0] + "={" + line2[1] + "}"
-        elif "=" in lines[i] and "==" not in lines[i]:
+        elif "=" in lines[i] and "==" not in lines[i] and "for (" not in lines[i]:
             line1 = lines[i].split("=")
             if '+' in line1[1] or '*' in line1[1] or '-' in line1[1] or '/' in line1[1]:
                 ab = str(line1[1]).split("\n")
@@ -72,9 +75,11 @@ try:
                 except:
                     ab = str(line1[1]).split("\n")
                     lines[i] = lines[i].replace(lines[i], "string " + ''.join(line1[0]) + "= " + ''.join(ab) + ';')
-        elif "for" in lines[i]:
+        elif "for" in lines[i] and "range" not in lines[i] and "{" not in lines[i]:
+            print(lines[i])
             line1 = ''.join(lines[i].split("for")[1]).replace("(", "").replace(")", "").replace(":", "").replace("\n", "").split(" in ")
-            lines[i] = "for (" + line1[0] + "=" + line1[1] + ".begin(); " + line1[0] + "!=" + line1[1] + ".end(); " + line1[0] + "++) {"
+            if "range" not in line1:
+                lines[i] = "for (" + line1[0] + "=" + line1[1] + ".begin(); " + line1[0] + "!=" + line1[1] + ".end(); " + line1[0] + "++) {"
             for c in range(i+1, len(lines)):
                 if str(line1[0]).replace(" ", "") in str(lines[c]):
                     lines[c] = lines[c].replace(line1[0], line1[0] + "->name")
@@ -93,6 +98,16 @@ try:
     for line in lines:
         print(line)
     print("\n}")
+    if extraatend:
+        print("\n}")
+    z = open(in1.replace(".py", ".cpp"), "a")
+    z.write(''.join(starter))
+    for newline in lines:
+        z.write(newline)
+    z.write("\n}")
+    if extraatend:
+        z.write("\n}")
+    z.close()
     
 except FileNotFoundError:
     print("Oops, that file doesn't exist. Maybe check again and re-run the program?")
