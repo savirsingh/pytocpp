@@ -38,4 +38,4 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
   
   #### It's important to have some C++ skills, even when using this automated converter. It will help you debug potential issues and/or optimization opportunities for   very large script conversions.
   
-### Take a look at the examples included in this repository.
+### Take a look at the examples included in this repository (both Python and C++).
