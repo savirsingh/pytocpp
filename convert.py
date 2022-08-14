@@ -60,9 +60,9 @@ try:
             line1 = lines[i].split("[")
             line2 = ''.join(line1).replace("]", "").split("=")
             if '"' in line1[1] or "'" in line1[1]:
-                lines[i] = "vector<string> " + line0[0] + "={" + line2[1] + "}"
+                lines[i] = "vector<string> " + line0[0] + "={" + line2[1] + "};"
             else:
-                lines[i] = "vector<int> " + line0[0] + "={" + line2[1] + "}"
+                lines[i] = "vector<int> " + line0[0] + "={" + line2[1] + "};"
         elif "=" in lines[i] and "==" not in lines[i] and "for (" not in lines[i]:
             line1 = lines[i].split("=")
             if '+' in line1[1] or '*' in line1[1] or '-' in line1[1] or '/' in line1[1]:
