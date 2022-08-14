@@ -10,6 +10,6 @@ It doesn't work perfectly yet:
 | For Loops | ✅  |
 | While Loops | ❌  |
 | Print Statements | ✅  |
-| Input(int/str) | ✅  |
-| Variable Assignments(int, str) | ✅  |
+| Input (int/str) | ✅  |
+| Variable Assignments (int, str) | ✅  |
 | Format Conversions | ❌  |
