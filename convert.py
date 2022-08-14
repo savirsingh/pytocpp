@@ -100,14 +100,25 @@ try:
     print("\n}")
     if extraatend:
         print("\n}")
-    z = open(in1.replace(".py", ".cpp"), "a")
-    z.write(''.join(starter))
-    for newline in lines:
-        z.write(newline)
-    z.write("\n}")
-    if extraatend:
-        z.write("\n}")
-    z.close()
+    print("\n")
+    while True:
+        in3 = input("Should we save the file as " + in1.replace(".py", ".cpp") + "? (y/n) ")
+        if in3 == "y":
+            z = open(in1.replace(".py", ".cpp"), "a")
+            z.write(''.join(starter))
+            for newline in lines:
+                z.write(newline)
+            z.write("\n}")
+            if extraatend:
+                z.write("\n}")
+            z.close()
+            print("\nThe file has been saved as: " + in1.replace(".py", ".cpp"))
+            break
+        if in3 == "n":
+            print("\nAlright, enjoy your day!")
+            break
+        else:
+            print("Select a valid option! (y/n) ")
     
 except FileNotFoundError:
     print("Oops, that file doesn't exist. Maybe check again and re-run the program?")
