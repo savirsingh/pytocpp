@@ -14,7 +14,9 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
 | Variable Assignments (int/str) | ✅  |
 | Format Conversions | ❌  |
 
-Feel free to contribute and add/improve any of these features. My email address is kopichiki@gmail.com if you need it.
+Feel free to contribute and add/improve any of these features. 
+
+My email address is kopichiki@gmail.com if you need it.
 
 ### Keep these things in mind:
 - Don't use unnecessary brackets in your output/print statement.
