@@ -5,6 +5,15 @@
 
 Py To CPP searches files for Python-unique syntax and converts it to the C++ equivalent. 
 
+Clone the repo:
+```
+git clone https://github.com/savirsingh/pytocpp
+```
+Start up the conversion script:
+```
+python convert.py
+```
+
 ### It doesn't work perfectly yet:
 | Statements/Syntax  | Status |
 | ------------- | ------------- |
