@@ -46,7 +46,7 @@ My email address is kopichiki@gmail.com if you need it.
   
 ### Take a look at the examples included in this repository (both Python and C++).
 
-### What it can do (in depth):
+## What it can do (in depth):
 - Convert print statements to std::cout (by simply replacing "print(" with "cout << " and replacing ")" with either " << endl;" or another string of your choice).
 - Convert both string inputs and integer inputs to std::cin (through removal of " = input()" and addition of " >> cin").
 - Convert for loops by replacing relevant syntax and adding "}" to the next unindented line.
