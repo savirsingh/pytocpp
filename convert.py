@@ -2,7 +2,7 @@
 # Name: PY TO CPP convert.py
 # github.com/savirsingh/pytocpp
 
-extraatend = 0
+extraatend = False
 
 while True:
     in1 = input(".py file which you would like to convert: ")
@@ -47,7 +47,7 @@ try:
         if "for" in lines[i] and "range" in lines[i]:
             line1 = ''.join(lines[i].split("for")[1]).replace("in", "").replace(" ", "").replace("(", "").replace(")", "").replace(":", "").replace("\n", "").split("range")
             lines[i] = "for (int " + line1[0] + "=0; " + line1[0] + "<" + line1[1] + "; " + line1[0] + "++) {"
-            extraatend += 1
+            extraatend = True
             if "for" in lines[i]:
                 for b in range(i, len(lines)+1):
                     try:
@@ -98,7 +98,7 @@ try:
     for line in lines:
         print(line)
     print("\n}")
-    for t in range(extraatend):
+    if extraatend:
         print("\n}")
     print("\n")
     while True:
