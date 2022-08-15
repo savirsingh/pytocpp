@@ -1,6 +1,8 @@
 # Py To CPP
 ## Convert Python Code To C++
 
+![logo](https://user-images.githubusercontent.com/84334654/184727184-4c00ace5-46c1-4527-b081-ebf60692dc8b.png)
+
 Py To CPP searches files for Python-unique syntax and converts it to the C++ equivalent. 
 
 ### It doesn't work perfectly yet:
