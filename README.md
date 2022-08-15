@@ -57,6 +57,8 @@ My email address is kopichiki@gmail.com if you need it.
 - Ask to save C++ file (.cpp) in the same directory.
 - Check if files actually exist in directory, if not, return an error and restart.
 
+The main conversion script is [convert.py](https://github.com/savirsingh/pytocpp/blob/main/convert.py) and the main C++ starter template (boilerplate) the code currently uses is [template.cpp](https://github.com/savirsingh/pytocpp/blob/main/template.cpp).
+
 Thank you for spending the time to look at my repository. I hope it benefits you and you learn something new from it! I feel it's pretty amazing that I was able to make this without using any artificial intelligence packages (I didn't want it to have any dependencies).
 
 I must admit, I will be using this in future!
