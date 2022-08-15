@@ -49,10 +49,11 @@ try:
             lines[i] = "for (int " + line1[0] + "=0; " + line1[0] + "<" + line1[1] + "; " + line1[0] + "++) {"
             extraatend = True
             if "for" in lines[i]:
-                for b in range(i, len(lines)+1):
+                for b in range(i+1, len(lines)+1):
                     try:
-                        if "    " in str(lines[b-1]) and "    " not in str(lines[b]):
-                            lines[b] = "}\n" + lines[b]
+                        while "  " not in lines[b]:
+                            lines[b] = "}\n"+lines[b]
+                            break
                     except:
                         pass
         if "[" in lines[i]:
@@ -85,10 +86,11 @@ try:
                     lines[c] = lines[c].replace(line1[0], line1[0] + "->name")
                     print("yes")
             if "for" in lines[i]:
-                for b in range(len(lines)):
+                for b in range(i+1, len(lines)):
                     try:
-                        if "    " in str(lines[b-1]) and "    " not in str(lines[b]):
-                            lines[b] = "}\n" + lines[b]
+                        while "  " not in lines[b]:
+                            lines[b] = "}\n"+lines[b]
+                            break
                     except:
                         pass
             
