@@ -47,12 +47,15 @@ try:
         if "for" in lines[i] and "range" in lines[i]:
             line1 = ''.join(lines[i].split("for")[1]).replace("in", "").replace(" ", "").replace("(", "").replace(")", "").replace(":", "").replace("\n", "").split("range")
             lines[i] = "for (int " + line1[0] + "=0; " + line1[0] + "<" + line1[1] + "; " + line1[0] + "++) {"
-            extraatend = True
+            h = 0
             if "for" in lines[i]:
                 for b in range(i+1, len(lines)+1):
+                    if h==1:
+                        break
                     try:
                         while "  " not in lines[b]:
                             lines[b] = "}\n"+lines[b]
+                            h = 1
                             break
                     except:
                         pass
@@ -64,6 +67,8 @@ try:
                 lines[i] = "vector<string> " + line0[0] + "={" + line2[1] + "};"
             else:
                 lines[i] = "vector<int> " + line0[0] + "={" + line2[1] + "};"
+        if "int(" in lines[i] and "input" not in lines[i]:
+            line1 = lines[i].split("int")
         elif "=" in lines[i] and "==" not in lines[i] and "for (" not in lines[i]:
             line1 = lines[i].split("=")
             if '+' in line1[1] or '*' in line1[1] or '-' in line1[1] or '/' in line1[1]:
@@ -85,11 +90,15 @@ try:
                 if str(line1[0]).replace(" ", "") in str(lines[c]):
                     lines[c] = lines[c].replace(line1[0], line1[0] + "->name")
                     print("yes")
+            h = 0
             if "for" in lines[i]:
-                for b in range(i+1, len(lines)):
+                for b in range(i+1, len(lines)+1):
+                    if h==1:
+                        break
                     try:
                         while "  " not in lines[b]:
                             lines[b] = "}\n"+lines[b]
+                            h = 1
                             break
                     except:
                         pass
