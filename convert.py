@@ -69,7 +69,9 @@ try:
             else:
                 lines[i] = "vector<int> " + line0[0] + "={" + line2[1] + "};"
         if "int(" in lines[i] and "input" not in lines[i]:
-            line1 = lines[i].split("int")
+            lines[i] = lines[i].replace("int", "stoi")
+            lines[i] = "int " + lines[i]
+            lines[i] = lines[i].replace("\n", "") + ";\n"
         elif "=" in lines[i] and "==" not in lines[i] and "for (" not in lines[i]:
             line1 = lines[i].split("=")
             if '+' in line1[1] or '*' in line1[1] or '-' in line1[1] or '/' in line1[1]:
