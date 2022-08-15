@@ -20,6 +20,7 @@ try:
     w = open("template.cpp", "r")
     starter = w.read()
     lines = f.readlines()
+    lines.append("\n\n")
     for i in range(len(lines)):
         lines2 = lines.copy()
         if "if" in lines[i] and " if " not in lines[i]:
