@@ -11,7 +11,7 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
 | While Loops | ❌  |
 | Print Statements | ✅  |
 | Input (int/str) | ✅  |
-| Variable Assignments (int, str) | ✅  |
+| Variable Assignments (int/str) | ✅  |
 | Format Conversions | ❌  |
 
 ### Keep these things in mind:
