@@ -14,7 +14,7 @@ Py To CPP searches files for Python-unique syntax and converts it to the C++ equ
 | Print Statements | ✅  |
 | Input (int/str) | ✅  |
 | Variable Assignments (int/str) | ✅  |
-| Format Conversions | ❌  |
+| Format Conversions | ✅  |
 
 Feel free to contribute and add/improve any of these features. 
 
