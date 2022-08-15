@@ -2,5 +2,5 @@
 # shows how to convert integers to strings
 
 num = 5000
-numstring = str(num)
-print(numstring)
+nums = str(num)
+print(nums)
