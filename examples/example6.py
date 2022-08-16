@@ -1,5 +1,6 @@
 # example by savir singh
 # just a cool example
+# intended to only work in C++
 
 x = int(input())
 y = int(input())
