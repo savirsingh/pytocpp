@@ -14,7 +14,7 @@ Go to the directory and start up the conversion script:
 python convert.py
 ```
 
-### It doesn't work perfectly yet:
+### Status:
 | Statements/Syntax  | Status |
 | ------------- | ------------- |
 | If/Else If/Else  | ✅  |
