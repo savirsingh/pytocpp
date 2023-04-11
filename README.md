@@ -17,12 +17,12 @@ python convert.py
 ### It doesn't work perfectly yet:
 | Statements/Syntax  | Status |
 | ------------- | ------------- |
-| If/Else If/Else  | ❌  |
+| If/Else If/Else  | ✅  |
 | For Loops | ✅  |
-| While Loops | ❌  |
+| While Loops | ✅  |
 | Print Statements | ✅  |
 | Input (int/str) | ✅  |
-| Variable Assignments (int/str) | ✅  |
+| Variable Assignments (int/str/bool) | ✅  |
 | Format Conversions | ✅  |
 
 Feel free to contribute and add/improve any of these features. 
