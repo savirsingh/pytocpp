@@ -23,17 +23,43 @@ try:
     lines.append("\n\n")
     for i in range(len(lines)):
         lines2 = lines.copy()
-        if "if" in lines[i] and " if " not in lines[i]:
-            print("yeeee")
+        if " True" in lines[i] or " False" in lines[i] and "'" not in lines[i] and '"' not in lines[i]:
+            lines[i] = lines[i].replace("True", "true")
+            lines[i] = lines[i].replace("False", "false")
+        if lines[i][0] == "#": lines[i] = "//" + lines[i][1:] # comments support
+        if "while " in lines[i] and " while " not in lines[i]:
+            line1 = lines[i].replace("while", "").replace(":", "").replace("in", "")
+            lines[i] = "while (" + line1 + ") {"
+            if "while" in lines[i]:
+                for r in range(i, len(lines)):
+                    try:
+                        if "    " in str(lines[r-1]) and "    " not in str(lines[r]) and "while " not in str(lines[r]) and "while " not in str(lines[r]):
+                            lines[r] = "}\n" + lines[r]
+                    except:
+                        pass
+        if "if" in lines[i] and " if " not in lines[i] and "elif " not in lines[i] and "else " not in lines[i]:
             line1 = lines[i].replace("if", "").replace(":", "").replace("in", "")
             lines[i] = "if (" + line1 + ") {"
             if "if" in lines[i]:
                 for r in range(i, len(lines)):
                     try:
-                        if "    " in str(lines[r-1]) and "    " not in str(lines[r]):
+                        if "    " in str(lines[r-1]) and "    " not in str(lines[r]) and "elif " not in str(lines[r]) and "else " not in str(lines[r]):
                             lines[r] = "}\n" + lines[r]
                     except:
                         pass
+        if "elif" in lines[i] and " elif " not in lines[i]:
+            line1 = lines[i].replace("elif", "").replace(":", "").replace("in", "")
+            lines[i] = "else if (" + line1 + ") {"
+            if "elif" in lines[i]:
+                for r in range(i, len(lines)):
+                    try:
+                        if "    " in str(lines[r-1]) and "    " not in str(lines[r]) and "elif " not in str(lines[r]) and "else if " not in str(lines[r]) and "else " not in str(lines[r]):
+                            lines[r] = "}\n" + lines[r]
+                    except:
+                        pass
+        if "else" in lines[i] and " else " not in lines[i] and "else if" not in lines[i]:
+            line1 = lines[i].replace("else", "").replace(":", "").replace("in", "")
+            lines[i] = "else {"
         if "print(" in lines[i]:
             if in2 == "":
                 lines[i] = lines[i].replace("print(", "cout << ").replace(")", " << endl;").replace("+", " << ")
@@ -83,6 +109,9 @@ try:
             if '+' in line1[1] or '*' in line1[1] or '-' in line1[1] or '/' in line1[1]:
                 ab = str(line1[1]).split("\n")
                 lines[i] = lines[i].replace(lines[i], "int " + ''.join(line1[0]) + "= " + ''.join(ab) + ';')
+            elif ('True' in lines[i] or 'False' in lines[i]) and "'" not in lines[i] and '"' not in lines[i]:
+                ab = str(line1[1]).split("\n")
+                lines[i] = lines[i].replace(lines[i], "bool " + ''.join(line1[0]) + "= " + ''.join(ab).lower() + ';')
             else:
                 try:
                     ab = int(line1[1])
@@ -142,3 +171,4 @@ try:
     
 except FileNotFoundError:
     print("Oops, that file doesn't exist. Maybe check again and re-run the program?")
+
