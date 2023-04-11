@@ -19,15 +19,15 @@ python convert.py
 ### Status:
 | Statements/Syntax  | Status |
 | ------------- | ------------- |
-| If/Else If/Else  | ✅  |
-| For Loops | ✅  |
-| While Loops | ✅  |
-| Print Statements | ✅  |
-| Input (int/str) | ✅  |
-| Variable Assignments (int/str/bool) | ✅  |
-| Format Conversions | ✅  |
-| Single Line Comments | ✅  |
-| Multiline Comments | ❌  |
+| If/Else If/Else  | ✅ |
+| For Loops | ✅ |
+| While Loops | ✅ |
+| Print Statements | ✅ |
+| Input (int/str) | ✅ |
+| Variable Assignments (int/str/bool) | ✅ |
+| Format Conversions | ✅ |
+| Single Line Comments | ✅ |
+| Multiline Comments | ❌ |
 
 Feel free to contribute and add/improve any of these features. 
 
