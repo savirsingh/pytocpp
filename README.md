@@ -14,6 +14,8 @@ Go to the directory and start up the conversion script:
 python convert.py
 ```
 
+#### There may be some bugs, and this project certainly isn't ready for professional use. It can be helpful for testing, personal use, and competitive programming, since it get generate large C++ files in seconds based on your Python code.
+
 ### Status:
 | Statements/Syntax  | Status |
 | ------------- | ------------- |
