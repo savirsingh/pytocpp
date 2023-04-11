@@ -26,6 +26,7 @@ python convert.py
 | Input (int/str) | ✅  |
 | Variable Assignments (int/str/bool) | ✅  |
 | Format Conversions | ✅  |
+| Comments | ✅  |
 
 Feel free to contribute and add/improve any of these features. 
 
